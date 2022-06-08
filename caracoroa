@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+   int x = 0, y = 0, resposta = 0, partidas;
+   do
+{
+   printf("\nQuantas partidas foram jogadas entre Maria e Joao?\n ");
+   scanf("%d", &partidas);
+   printf("Quem ganhou a partida, Maria, digite: 0.\nJoao, digite: 1.\n");
+    if (partidas > 0){
+
+        for(int i = 0; i < partidas; i++)
+        {
+            do{
+                scanf("%d", &resposta);
+           if(resposta != 0 && resposta != 1){
+            printf("Resposta inválida");
+        }
+            } while(resposta != 0 && resposta != 1);
+            switch(resposta)
+        {
+
+        case 0:
+            x++;
+            break;
+
+        case 1:
+            y++;
+            break;
+        }
+        }
+        printf("Maria venceu %d e Joao venceu %d", x, y);
+
+    }
+    }while(partidas>0);
+}
